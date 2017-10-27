@@ -1,8 +1,0 @@
-=============================================
-==== Net Community Productivity Project =====
-===================================2017-10-01
-=====================Thomas Bryce Kelly @ FSU
-=============================================
-
-This Directory:
-Here are the minimally parsed and raw output files for each data source going into the model. Example of typical files and file structure are provided within their respective subfolders.

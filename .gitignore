@@ -1,6 +1,6 @@
-Raw*Files/
+Raw*Data/
 RStates/
-Input*Files/
+Input*Data/
 Output/
 *.xlh
 *.rdata
