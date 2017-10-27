@@ -1,2 +1,4 @@
-*.txt
-*.htl
+Raw Files/*
+RStates/*
+Input Files/*
+Output/*
