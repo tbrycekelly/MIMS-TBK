@@ -2,3 +2,5 @@ Raw\ Files/*
 RStates/*
 Input\ Files/*
 Output/*
+*.xlh
+*.rdata
