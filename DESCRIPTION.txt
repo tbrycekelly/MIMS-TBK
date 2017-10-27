@@ -1,0 +1,25 @@
+=============================================
+==== Net Community Productivity Project =====
+===================================2017-10-01
+=====================Thomas Bryce Kelly @ FSU
+=============================================
+
+This Directory:
+Main directory for the project. Files should be organized as appropriate according to their relative use in the model per the structure below
+
+Input files:  Human-readable, model input
+Output:       All human-readable output.
+Raw Data:     Minimally parsed source data
+RStates:      All .rdata files
+
+All program files shall remain outside the folder hierarchy and in this main folder.
+
+
+#### Flag Values ####
+ 0 :  Unset
+ 1 :  Direct Computation (all data present)
+ 2 :  Indirect - linear extrapolation of 02:Ar from [02]
+ 3 :  Indirect - linear extrapolation of 02:Ar from NCP
+...
+99 : Error/Missing
+

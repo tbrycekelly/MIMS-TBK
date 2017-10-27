@@ -1,0 +1,10 @@
+=============================================
+==== Net Community Productivity Project =====
+===================================2017-10-01
+=====================Thomas Bryce Kelly @ FSU
+=============================================
+
+This Directory:
+Contains human readable (e.g. xlsx, csv, etc) composite files from each raw data source. The goal is to have one and only one file for each type of data input. Exceptions to this may include resampled verisons of a master file (e.g. first 10% of data, 1:5 averaging, ...) to have smaller, easier to open sample datasets.
+
+Parallel versions of datasets in the .rdata format will be in the <RStates> directory (and those are the actual input files to avoid re-parsing text files).

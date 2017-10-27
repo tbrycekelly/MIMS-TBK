@@ -1,0 +1,15 @@
+=============================================
+==== Net Community Productivity Project =====
+===================================2017-10-01
+=====================Thomas Bryce Kelly @ FSU
+=============================================
+
+This Directory:
+This directory contains the .rdata files for all input data as well as all major increments of the model. For example the main model will generate:
+
+ship.data.rdata
+ship.data.avg.rdata
+ship.data.avg.wind.rdata
+ship.data.avg.wind.mld.rdata
+
+each reflecting a major addition/step of the model.
