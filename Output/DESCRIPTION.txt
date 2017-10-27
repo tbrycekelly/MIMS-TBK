@@ -1,8 +1,0 @@
-=============================================
-==== Net Community Productivity Project =====
-===================================2017-10-01
-=====================Thomas Bryce Kelly @ FSU
-=============================================
-
-This Directory:
-Output which include any and all human-readable (e.g. images, xlsx, html) files from the model. These are organized as appropriate.
