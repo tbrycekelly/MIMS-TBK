@@ -28,4 +28,4 @@ __Data Crunching__
 
 ### Citation
 
-Dr. Sven Kranz and Thomas B Kelly, Florida State University.
+Dr. Sven __Kranz__ [(link)](https://www.eoas.fsu.edu/people/faculty/dr-sven-kranz) and Thomas B __Kelly__ [(link)](https://nationalmaglab.org/component/maglabdata/?view=personnel&id=ThomasKelly), Florida State University.
