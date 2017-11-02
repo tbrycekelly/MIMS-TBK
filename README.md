@@ -13,10 +13,10 @@ See the _Description_ files for information about the folder structure and some 
 
 __Input Processing__
 * [EIMS Processing Script](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20EIMS.ipynb)
-* Meterorlogical Data Script
-* CTD Data Processing
+* [Wind Data Script](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20Wind.ipynb)
+* [CTD Data Processing](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20MLD.ipynb)
 * MIMS Processing Script
-* Flow-through Instrument Processing
+* [Ship Instrument Processing](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20Ship%20Data.ipynb)
 
 __Data Crunching__
 * [Input Data Compilation](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Main%20Data%20Merge.ipynb)
