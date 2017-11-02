@@ -7,6 +7,7 @@ This suite of scripts is designed to walk the user through each of the steps req
 
 Throughout, the notebook files are designed to walk the user through the process with choiced and options (e.g. linear interpolation vs nearest neighbor?) throughout. The goal is to have a flexible and adaptable series of scripts for general use by the oceanographic community.
 
+See the _Description_ files for information about the folder structure and some additional metadata regarding the suite.
 
 ## Files
 
