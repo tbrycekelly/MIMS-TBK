@@ -2,6 +2,8 @@
 
 This is a set of scripts for calculating NCP from O2:Ar datasets. Each notebook file contains the tools and algorithms to load, process, and compile the raw data formats into the final analysis. 
 
+__N.B. This code base is still under active development with many incomplete and, potentially, incorrect codes. Use/browse accordingly.__
+
 ### Order of operations
 This suite of scripts is designed to walk the user through each of the steps required to take the raw data files all the way to final results. __Starting off__ there are a series of input scripts that parse and preprocess the raw data files into intermediate, human readable formats (human readable in order to facilitate spot checking and verification of results). __After that__ there is a linear series of modeling scripts that collate the data and crunch the numbers resulting in a series of preliminary output figures and results. __Finally,__ specific analysis and comparison scripts will facilitate the final data processing resulting in publication ready data.
 
@@ -24,6 +26,10 @@ __Data Crunching__
 * Diurnal Signal Analysis
 * Spatial Signal Analysis
 * NCP Comparison Script
+
+---
+### About Notebook Files
+Since not everyone is familiar with the Jupyter Notebook platform, let us say a few words about it. Jupyter, formally iPython Notebook, is an interactive scripting environment for use in data analysis, script development and, importanly, for sharing scripts and workflows with others. While designed with Python in mind, the platform is nearly language agnostic with ready backends (i.e. kernels) for numerous languages: R, MatLab, C, Java, Clojure, Lisp, Fortran, etc. Do yourself a favor and check it out, it is certainly worth the time to learn about this valuable, open source resource.
 
 ---
 
