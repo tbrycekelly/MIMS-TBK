@@ -17,15 +17,15 @@ __Input Processing__
 * [EIMS Processing Script](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20EIMS.ipynb)
 * [Wind Data Script](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20Wind.ipynb)
 * [CTD Data Processing](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20MLD.ipynb)
-* MIMS Processing Script
+* [MIMS Processing Script](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20MIMS.ipynb)
 * [Ship Instrument Processing](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20Ship%20Data.ipynb)
 
 __Data Crunching__
 * [Input Data Compilation](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Main%20Data%20Merge.ipynb)
-* [NCP Model Script](https://github.com/tbrycekelly/MIMS-TBK/blob/master/NCP%20Model.ipynb)
-* Diurnal Signal Analysis
-* Spatial Signal Analysis
-* NCP Comparison Script
+* [NCP Model Module](https://github.com/tbrycekelly/MIMS-TBK/blob/master/NCP%20Model.ipynb)
+* Diurnal Signal Module
+* Spatial Signal Module
+* Intercalibration Module
 
 ---
 ### About Notebook Files
