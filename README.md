@@ -25,6 +25,7 @@ __Data Crunching__
 * [NCP Model Module](https://github.com/tbrycekelly/MIMS-TBK/blob/master/NCP%20Model.ipynb)
 * Diurnal Signal Module
 * Spatial Signal Module
+* Vertical Mixing Module
 * Intercalibration Module
 
 ---
