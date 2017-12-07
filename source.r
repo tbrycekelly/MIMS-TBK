@@ -1,7 +1,7 @@
 ## Install the package if needed:
 #install.packages('geosphere', repos='http://cran.us.r-project.org')
 
-load.library = function(x = c('ncdf4', 'R.matlab', 'openxlsx','RColorBrewer', 'compiler', 'lattice', 'geosphere', 'readxl')) {
+load.library = function(x = c('ncdf4', 'R.matlab', 'openxlsx','RColorBrewer', 'compiler', 'lattice', 'geosphere', 'readxl', 'data.table')) {
     cat('Packages Loaded:\n')
     cat(x)
     cat('\n')
@@ -19,12 +19,14 @@ load.library = function(x = c('ncdf4', 'R.matlab', 'openxlsx','RColorBrewer', 'c
 #library(lattice)
 #library(geosphere)
 
+load.library()
+
 ## Enable compilation (speed gain?)
-#enableJIT(3)
+enableJIT(3)
 
 ## Moving Average function (for smoothing)
 ma <- function(x, n=5){
-    filter(x,rep(1/n,n), sides=2)
+    filter(x, rep(1/n,n), sides=2)
 }
 
 ## Helper function for converting the date time stamps.
