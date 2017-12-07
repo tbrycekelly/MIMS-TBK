@@ -2,3 +2,5 @@ Raw*Data/
 RStates/
 Input*Data/
 Raw*/
+*.ipynb_check*
+*checkpoint*
