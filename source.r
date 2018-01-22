@@ -14,7 +14,8 @@ load.library = function(x = c('ncdf4',
                               'geosphere',
                               'readxl',
                               'data.table',
-                              'rworldmap'
+                              'rworldmap',
+                              'rworldxtra'
                              )) {
     cat('Packages Loaded:\n')
     cat(x)
@@ -169,6 +170,32 @@ add.error.bars = function(x, s.x, y, s.y) {
         lines(x = c(x[i], x[i]), y = c(y[i] + s.y[i], y[i] - s.y[i]))
         lines(x = c(x[i] + s.x[i], x[i] - s.x[i]), y = c(y[i], y[i]))
     }
+}
+
+add.daynight = function(col='#00000002') {
+    l = which(log(ship.data$PA+1) < mean(log(ship.data$PA + 1)))
+    for (i in l) {
+        lines(x = rep(ship.data$DT[i], 2), y = c(-1e5, 1e5), col=col)
+    }
+}
+
+plot.map = function(lon, lat, main = '', xlab='Longitude', ylab='Latitude', col=col, pch=20, cex=1) {
+    
+    lat.max = max(lat, na.rm = TRUE)
+    lat.min = min(lat, na.rm = TRUE)
+    lon.max = max(lon, na.rm = TRUE)
+    lon.min = min(lon, na.rm = TRUE)
+    
+    newmap <- getMap(resolution = "high")
+    plot(newmap, xlim = c(lon.min, lon.max), ylim = c(lat.min, lat.max), asp = 1)
+    
+    points(lon, lat, main = main, col = col, xlab = xlab, ylab = ylab, pch = pch, cex = cex)
+}
+
+add.normalized.line = function(x, y, lty = 1, col = 'black', scale = 1, offset = 0, pch=16) {
+    new.y = (y - mean(y, na.rm = TRUE)) / sd(y, na.rm = TRUE)
+    
+    points(x, new.y * scale + offset, col=col, lty=lty, cex=0.2, pch=pch)
 }
 
 ## rworldmap example
