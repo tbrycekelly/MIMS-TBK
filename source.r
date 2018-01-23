@@ -198,6 +198,60 @@ add.normalized.line = function(x, y, lty = 1, col = 'black', scale = 1, offset =
     points(x, new.y * scale + offset, col=col, lty=lty, cex=0.2, pch=pch)
 }
 
+
+take.avg = function(data, c.time = 1, nc.skip = 1, n = 120, verbose = TRUE) {
+    ### N Second Averaging section
+
+    before = nrow(data)
+    i = 1
+    nc = ncol(data)
+
+    while (i < nrow(data)) {  # Loop through each row in ship.data
+        current.time = data[i, c.time]
+        
+        ## Determine which rows are within N minutes of the current row
+        in.range = which(data[, c.time] >= data[i, c.time] &
+                         as.numeric(difftime(data[, c.time], data[i, c.time], units='secs')) < n)
+
+        ##  Average the column values together ignoring the first one (time)
+        data[i, (nc.skip+1):nc] = apply(data[in.range, (1+nc.skip):nc], 2, function(x) {mean(x, na.rm = TRUE)})
+
+        ## Remove all rows used to make average except for row i
+        in.range = in.range[in.range != i]
+        if (length(in.range) > 0) {
+            data = data[-in.range,]
+        }
+        i = i + 1
+    }
+    if (verbose) {
+        print(paste('The number of rows before was', before, 'and now there are', nrow(data)))
+    }
+    data
+}
+
+
+trap.integrate = function(x, y, max) {
+    l = order(x)
+    s = x[l[1]] * y[l[1]]
+    
+    a2 = which(max < x[l])[1]  ## First depth that is greater than max
+    a1 = which(max > x[rev(l)])[1]  ## Last depth less than max
+    m = (y[l[a2]] - y[l[a1]]) / (x[l[a2]] - x[l[a1]])
+    
+    v.max = m * (max - x[l[a1]]) + y[l[a1]]
+    
+    y[l[a2]] = v.max
+    x[l[a2]] = max
+    
+    for (i in 2:length(l)) {
+        s = s + (x[l[i]] - x[l[i-1]]) * (y[l[i]] + y[l[i-1]]) / 2
+        if (max == x[l[i]]) {
+            return(mean = s / max)
+        }
+    }
+    (s / x[l[length(l)]])
+}
+
 ## rworldmap example
 # newmap <- getMap(resolution = "high")
 # plot(newmap, xlim = c(-130, -115), ylim = c(30, 40), asp = 1)
