@@ -4,3 +4,4 @@ Input*Data/
 Raw*/
 *.ipynb_check*
 *checkpoint*
+packrat/lib*/

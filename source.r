@@ -192,8 +192,12 @@ plot.map = function(lon, lat, main = '', xlab='Longitude', ylab='Latitude', col=
     points(lon, lat, main = main, col = col, xlab = xlab, ylab = ylab, pch = pch, cex = cex)
 }
 
-add.normalized.line = function(x, y, lty = 1, col = 'black', scale = 1, offset = 0, pch=16) {
-    new.y = (y - mean(y, na.rm = TRUE)) / sd(y, na.rm = TRUE)
+add.normalized.line = function(x, y, lty = 1, col = 'black', scale = 1, offset = 0, pch=16, method = 1) {
+    if (method == 1) { 
+        new.y = (y - mean(y, na.rm = TRUE)) / sd(y, na.rm = TRUE)
+    } else {
+        new.y = (y - mean(y, na.rm = TRUE)) / IQR(y, na.rm = TRUE)
+    }
     
     points(x, new.y * scale + offset, col=col, lty=lty, cex=0.2, pch=pch)
 }
