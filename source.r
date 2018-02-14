@@ -179,12 +179,12 @@ add.daynight = function(col='#00000002') {
     }
 }
 
-plot.map = function(lon, lat, main = '', xlab='Longitude', ylab='Latitude', col=col, pch=20, cex=1) {
+plot.map = function(lon, lat, main = '', xlab='Longitude', ylab='Latitude', col=col, pch=20, cex=1, zoom = 0) {
     
-    lat.max = max(lat, na.rm = TRUE)
-    lat.min = min(lat, na.rm = TRUE)
-    lon.max = max(lon, na.rm = TRUE)
-    lon.min = min(lon, na.rm = TRUE)
+    lat.max = max(lat, na.rm = TRUE) + zoom
+    lat.min = min(lat, na.rm = TRUE) - zoom
+    lon.max = max(lon, na.rm = TRUE) + zoom
+    lon.min = min(lon, na.rm = TRUE) - zoom
     
     newmap <- getMap(resolution = "high")
     plot(newmap, xlim = c(lon.min, lon.max), ylim = c(lat.min, lat.max), asp = 1)
