@@ -203,7 +203,7 @@ add.normalized.line = function(x, y, lty = 1, col = 'black', scale = 1, offset =
 }
 
 
-take.avg = function(data, c.time = 1, nc.skip = 1, n = 120, verbose = TRUE) {
+take.avg = function(data, c.time = 1, nc.skip = 1, n = 120, verbose = TRUE, type = 1) {
     ### N Second Averaging section
 
     before = nrow(data)
@@ -216,13 +216,15 @@ take.avg = function(data, c.time = 1, nc.skip = 1, n = 120, verbose = TRUE) {
         ## Determine which rows are within N minutes of the current row
         in.range = which(data[, c.time] >= data[i, c.time] &
                          as.numeric(difftime(data[, c.time], data[i, c.time], units='secs')) < n)
-
-        ##  Average the column values together ignoring the first one (time)
-        data[i, (nc.skip+1):nc] = apply(data[in.range, (1+nc.skip):nc], 2, function(x) {mean(x, na.rm = TRUE)})
-
-        ## Remove all rows used to make average except for row i
-        in.range = in.range[in.range != i]
-        if (length(in.range) > 0) {
+        if (length(in.range) > 1) {
+            ##  Average the column values together ignoring the first one (time)
+            if (type == 1) {
+                data[i, (nc.skip+1):nc] = apply(data[in.range, (1+nc.skip):nc], 2, function(x) {mean(as.numeric(x), na.rm = TRUE)})
+            } else {
+                data[i, (nc.skip+1):nc] = apply(data[in.range, (1+nc.skip):nc], 2, function(x) {median(as.numeric(x), na.rm = TRUE)})
+            }
+            ## Remove all rows used to make average except for row i
+            in.range = in.range[in.range != i]
             data = data[-in.range,]
         }
         i = i + 1
