@@ -77,6 +77,25 @@ make.div.pal = function(x=100, n, pal='Spectral') {
     get.div.pal(n, pal=pal)[as.numeric(cut(x, breaks = n))]
 }
 
+make.div.pal.limited = function(x=100, n, pal='Spectral', lim = c(-1e5, 1e5)) {
+    x[x > lim[2]] = lim[2]
+    x[x < lim[1]] = lim[1]
+    get.div.pal(n, pal=pal)[as.numeric(cut(x, breaks = n))]
+}
+
+make.div.pal2 = function(x=c(1,10), n=100, pal='Spectral', min = NA, max = NA) {
+    cols = get.div.pal(n+1, pal=pal)
+    if (is.na(min)) {
+        min = min(x, na.rm=TRUE)
+        max = max(x, na.rm=TRUE)
+    }
+    x[x < min] = min
+    x[x > max] = max
+    
+    x = (x-min) * n / (max-min)   
+    cols[floor(x)+1]
+}
+
 
 #########################
 #### Data Processing ####
