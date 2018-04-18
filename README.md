@@ -22,6 +22,7 @@ __Input Processing__
 * [Ship Instrument Processing](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20Parse%20Ship%20Data.ipynb)
 * [FRRf Processing](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20FRRF.ipynb)
 * [Optode Processing](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20Parse%20Optode.ipynb)
+* [pCO2 Processing](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input%20-%20pCO2.ipynb)
 
 __Data Crunching__
 * [Ship Data Module](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Generate%20Input-%20Ship%20Data.ipynb)
@@ -36,6 +37,7 @@ __Ancillary Modules__
 * [Oxygen Module](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Module%20-%20Oxygen%20Analysis.ipynb)
 * [CTD Module](https://github.com/tbrycekelly/MIMS-TBK/blob/master/Module%20-%20CTD%20Cast%20Analysis.ipynb)
 
+
 ---
 ### About Notebook Files
 Since not everyone is familiar with the Jupyter Notebook platform, let us say a few words about it. Jupyter, formally iPython Notebook, is an interactive scripting environment for use in data analysis, script development and, importanly, for sharing scripts and workflows with others. While designed with Python in mind, the platform is nearly language agnostic with ready backends (i.e. kernels) for numerous languages: R, MatLab, C, Java, Clojure, Lisp, Fortran, etc. Do yourself a favor and check it out, it is certainly worth the time to learn about this valuable, open source resource.
@@ -44,6 +46,7 @@ Since not everyone is familiar with the Jupyter Notebook platform, let us say a 
 
 ### Citation
 
-Thomas B __Kelly__ and Sven A. Kranz, _An Improved, Reusable Pipeline for Oxygen/Argon Derived Measurements Including Net Community Production_. Florida State University. [![DOI](https://zenodo.org/badge/108587415.svg)](https://zenodo.org/badge/latestdoi/108587415)
+Thomas B Kelly & Sven A. Kranz, _An Improved, Reusable Pipeline for Oxygen/Argon Derived Measurements Including Net Community Production_. Florida State University.
+[![DOI](https://zenodo.org/badge/108587415.svg)](https://zenodo.org/badge/latestdoi/108587415)
 
-Find our contact information: [(Sven Kranz)](https://www.eoas.fsu.edu/people/faculty/dr-sven-kranz) & [(Thomas Kelly)](http://about.tkelly.org/)
+Find our contact information: [(Sven Kranz)](https://www.eoas.fsu.edu/people/faculty/dr-sven-kranz) & [(Thomas Kelly)](http://about.tkelly.org/).
