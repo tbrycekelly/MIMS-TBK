@@ -7,7 +7,7 @@
 This Directory:
 Main directory for the project. Files should be organized as appropriate according to their relative use in the model per the structure below
 
-Input files:  Human-readable, model input
+Input files:  Human-readable, model intermediate files
 Output:       All human-readable output.
 Raw Data:     Minimally parsed source data
 RStates:      All .rdata files

@@ -64,6 +64,66 @@ rho = function(S=30, T=15, p=0) {
 }
 
 
+adiabatic.temp.grad = function(S, T, P) {
+  T68 = 1.00024 * T
+  
+  a0 =  3.5803e-5
+  a1 = 8.5258e-6
+  a2 = -6.836e-8
+  a3 =  6.6228e-10
+  
+  b0 = 1.8932e-6
+  b1 = -4.2393e-8
+  
+  c0 = 1.8741e-8
+  c1 = -6.7795e-10
+  c2 = 8.733e-12
+  c3 = -5.4481e-14
+  
+  d0 = -1.1351e-10
+  d1 =  2.7759e-12
+  
+  e0 = -4.6206e-13
+  e1 = +1.8676e-14
+  e2 = -2.1687e-16
+  
+  ADTG = a0 + (a1 + (a2 + a3 * T68) * T68) * T68 + (b0 + b1 * T68) * (S-35)
+  + ((c0 + (c1 + (c2 + c3 * T68) * T68) * T68) + (d0 + d1 * T68) * (S-35)) * P
+  + (e0 + (e1 + e2 * T68) * T68 ) * P^2
+  
+  ADTG
+}
+
+
+calc.ptemp = function(S, T, P, P.ref) {
+  del.P  = P.ref - P
+  del.th = del.P * adiabatic.temp.grad(S, T, P)
+  th     = T * 1.00024 + 0.5 * del.th
+  q      = del.th
+  
+  ## theta2
+  del.th = del.P * adiabatic.temp.grad(S, th/1.00024, P + 0.5 * del.P)
+  th     = th + (1 - 1 / sqrt(2)) * (del.th - q)
+  q      = (2-sqrt(2)) * del.th + (-2 + 3/sqrt(2)) * q
+  
+  ## theta3
+  del.th = del.P * adiabatic.temp.grad(S, th / 1.00024, P + 0.5 * del.P);
+  th     = th + (1 + 1/sqrt(2)) * (del.th - q)
+  q      = (2 + sqrt(2)) * del.th + (-2 - 3/sqrt(2)) * q
+  
+  ## theta4
+  del.th = del.P * adiabatic.temp.grad(S, th/1.00024, P + del.P)
+  
+  ## Potential Temperature6
+  (th + (del.th - 2 * q)/6) / 1.00024
+}
+
+
+sigma.theta = function(S, T, P, P.ref = 0) {
+  rho(S = S, T = calc.ptemp(S = S, T = T, P = P, P.ref= P.ref), p = P.ref) - 1000
+}
+
+
 
 #####################################
 #####################################
